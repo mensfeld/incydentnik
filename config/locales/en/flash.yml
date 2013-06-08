@@ -1,0 +1,37 @@
+en:
+  flash:
+    actions:
+      create:
+        notice: "The %{resource_name} was added."
+      update:
+        notice: "The %{resource_name} was updated."
+      destroy:
+        notice: "The %{resource_name} was deleted."
+        alert: "The %{resource_name} could not be deleted."
+
+    user:
+      subscriptions:
+        create:
+          notice: 'The Shop was added.'
+        update:
+          notice: 'The Shop was updated.'
+        destroy:
+          notice: "The Shop was deleted."
+          alert: "The Shop could not be deleted."
+
+      settings:
+        passwords:
+          update:
+            notice: 'Your password was changed successfully.'
+
+      parser:
+        rules:
+          create:
+            notice: 'The Rules were added.'
+          update:
+            notice: 'The Rules were updated.'
+        filters:
+          create:
+            notice: 'The Filter was added.'
+          update:
+            notice: 'The Filter was updated.'

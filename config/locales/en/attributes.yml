@@ -1,0 +1,27 @@
+en:
+  attributes:
+    back: Back
+    cancel: Cancel
+    close: Close
+    confirm: 'Are you sure?'
+    destroy: Destroy
+    details: Details
+    edit: Edit
+    if: if
+    help: Help
+    hi: Hi
+    no_string: 'No'
+    options: Options
+    or: or
+    show: Show
+    thanks: Thanks
+    to: to
+    update: Update
+    updated_at: Last update
+    unlimited: Unlimited
+    yes_string: 'Yes'
+    statuses:
+      waiting: Waiting
+      pending: Pending
+      failure: Failed
+      success: Success

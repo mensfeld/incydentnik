@@ -1,0 +1,47 @@
+%section#contact.contact
+  .container
+    .row-fluid
+      .span6
+        %h2 Pytania i wskazówki?
+        %p
+          %i.icon-bullhorn.icon-4x.pull-left.icon-muted
+          Chętnie dowiemy się co o nas myślisz! Masz dla nas jakieś wskazówki,
+          uwagi lub po prostu chcesz nam pogratulować? Napisz do nas.
+          Żadna wiadomość nie zostanie bez odpowiedzi!
+      .span6
+        %br/
+        %p Możesz skontaktować się z nami na wiele sposobów:
+        %ul.unstyled.inline.social
+          %li
+            %a{:href => '#'}
+              %i.icon-phone
+          %li
+            %a{:href => '#'}
+              %i.icon-facebook
+          %li
+            %a{:href => '#'}
+              %i.icon-twitter
+          %li
+            %a{:href => '#'}
+              %i.icon-github-alt
+          %li
+            %a{:href => '#'}
+              %i.icon-linkedin
+          %li
+            %a{:href => '#'}
+              %i.icon-google-plus
+        %ul.unstyled.inline.text-center
+          %li
+            %a{:href => '#'} FAQ
+          |
+          %li
+            %a{:href => '#contact-form'} Formularz kontaktowy
+  .contact-form.text-center
+    %i.icon-envelope.contact-form-btn.closes
+    .container.contact-form-inner
+      .row-fluid
+        %form#contact-form
+          %input.input-block-level{:name => "name", :placeholder => "Twoje imię", :required => "", :type => "text"}
+          %input.input-block-level{:name => "email", :placeholder => "Twój adres e-mail", :required => "", :type => "email"}
+          %textarea.input-block-level{:name => "message", :placeholder => "Twoja wiadomość", :required => ""}
+          %button.btn-custom{:type => "submit"} Wyślij!

@@ -1,0 +1,17 @@
+%section#search.subscribe
+  .container
+    .row-fluid
+      .span12
+        %p Wpisz adres miejsca które chciałbyś zaincydentować!
+        %form#subsc-forms{:onsubmit => 'search(); return false;'}
+          .input-append
+            %input{:name => "subscriber", :placeholder => "Wprowadź adres miejsca", :required => "", :type => "search", :id => 'search_address'}
+            %button.btn-custom#search_button{:type => "submit", 'data-loading-text'=>"Wyszukiwanie..."} Wyszukaj
+
+%section#map-container.contact
+  #loading-container
+    #loading-text.hide
+      .progress.progress-striped.active{:style => "width: 25%; margin: 0 auto;"}
+        .bar{:style => "width: 10%;"}
+    #loading
+  #map

@@ -1,0 +1,21 @@
+%section#subscribe.subscribe
+  .container
+    .row-fluid
+      .span12
+        %p Chcesz wiedzieć o tym, co się u nas dzieje? Zostaw swój email!
+        %form#subsc-form
+          .input-append
+            %input#appendedInputButton{:name => "subscriber", :placeholder => "Twój adres email", :required => "", :type => "email"}
+            %button.btn-custom{:type => "submit"} Zapisz!
+%footer#footer.footer
+  .container
+    .row-fluid
+      .span12
+        %h1.footer-title.pull-left
+          %a{:href => "/"}
+            %i.icon-map-marker
+            Incydentnik
+        %p.pull-right.copyright
+          \© Fundacja Instytut Rozwoju Regionalnego - Wszelkie prawa zastrzeżone
+
+
