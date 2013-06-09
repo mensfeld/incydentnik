@@ -32,7 +32,7 @@ $(document).ready(function() {
       name: 'add_crime',
       action: function(e){
         var pinColor = "FF0000";
-        var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+        var pinImage = new google.maps.MarkerImage("/assets/crime.png",
           new google.maps.Size(21, 34),
           new google.maps.Point(0,0),
           new google.maps.Point(10, 34));
@@ -57,7 +57,7 @@ $(document).ready(function() {
       name: 'add_zaniedbanie',
       action: function(e){
         var pinColor = "047235";
-        var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+        var pinImage = new google.maps.MarkerImage("/assets/neglect.png",
           new google.maps.Size(21, 34),
           new google.maps.Point(0,0),
           new google.maps.Point(10, 34));
@@ -82,7 +82,7 @@ $(document).ready(function() {
       name: 'add_ligth',
       action: function(e){
         var pinColor = "DCDCDC";
-        var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+        var pinImage = new google.maps.MarkerImage("/assets/light.png",
           new google.maps.Size(21, 34),
           new google.maps.Point(0,0),
           new google.maps.Point(10, 34));
@@ -107,7 +107,7 @@ $(document).ready(function() {
       name: 'add_party',
       action: function(e){
         var pinColor = "FFFF00";
-        var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+        var pinImage = new google.maps.MarkerImage("/assets/libation.png",
           new google.maps.Size(21, 34),
           new google.maps.Point(0,0),
           new google.maps.Point(10, 34));
