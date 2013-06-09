@@ -3,6 +3,8 @@ require "app_responder"
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  layout 'application'
+
   self.responder = AppResponder
   respond_to :html
 

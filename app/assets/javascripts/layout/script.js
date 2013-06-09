@@ -2,6 +2,17 @@
  * All the plugins init are in this file
  **/
 var map;
+
+function save_incident(type, lat, lng){
+$.ajax({
+    type: "POST",
+    url: '/incidents',
+    data: { incident: { type: type, lat: lat, lng: lng } },
+    success: function(){},
+    dataType: 'js'
+  });
+}
+
 $(document).ready(function() {
   
   // activate the second carousel
@@ -30,6 +41,8 @@ $(document).ready(function() {
           new google.maps.Point(0, 0),
           new google.maps.Point(12, 35));
 
+        save_incident('crime', e.latLng.lat(), e.latLng.lng())
+
         this.addMarker({
           lat: e.latLng.lat(),
           lng: e.latLng.lng(),
@@ -40,7 +53,7 @@ $(document).ready(function() {
         this.hideContextMenu();
       }
     },{
-      title: 'Zaniedbania przestrzeni',
+      title: 'Nieprzyjazna przestrze\u0144',
       name: 'add_zaniedbanie',
       action: function(e){
         var pinColor = "047235";
@@ -52,6 +65,8 @@ $(document).ready(function() {
           new google.maps.Size(40, 37),
           new google.maps.Point(0, 0),
           new google.maps.Point(12, 35));
+
+        save_incident('neglect', e.latLng.lat(), e.latLng.lng())
 
         this.addMarker({
           lat: e.latLng.lat(),
@@ -76,6 +91,8 @@ $(document).ready(function() {
           new google.maps.Point(0, 0),
           new google.maps.Point(12, 35));
 
+        save_incident('light', e.latLng.lat(), e.latLng.lng())
+
         this.addMarker({
           lat: e.latLng.lat(),
           lng: e.latLng.lng(),
@@ -98,6 +115,8 @@ $(document).ready(function() {
           new google.maps.Size(40, 37),
           new google.maps.Point(0, 0),
           new google.maps.Point(12, 35));
+
+        save_incident('libation', e.latLng.lat(), e.latLng.lng())
 
         this.addMarker({
           lat: e.latLng.lat(),

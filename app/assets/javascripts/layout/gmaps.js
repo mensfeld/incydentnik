@@ -110,7 +110,9 @@ if(window.google && window.google.maps){
         mapTypeControl: mapTypeControl,
         scaleControl: scaleControl,
         streetViewControl: streetViewControl,
-        overviewMapControl: overviewMapControl
+        overviewMapControl: overviewMapControl,
+        // Disable zoom on map on scroll
+        scrollwheel: false
       }
 
       if(options.disableDefaultUI != true)
