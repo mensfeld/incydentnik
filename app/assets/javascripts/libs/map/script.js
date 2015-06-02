@@ -32,7 +32,7 @@ $(document).ready(function() {
       name: 'add_crime',
       action: function(e){
         var pinColor = "FF0000";
-        var pinImage = new google.maps.MarkerImage("/assets/crime.png",
+        var pinImage = new google.maps.MarkerImage("/assets/shared/crime.png",
           new google.maps.Size(21, 34),
           new google.maps.Point(0,0),
           new google.maps.Point(10, 34));
@@ -57,7 +57,7 @@ $(document).ready(function() {
       name: 'add_zaniedbanie',
       action: function(e){
         var pinColor = "047235";
-        var pinImage = new google.maps.MarkerImage("/assets/neglect.png",
+        var pinImage = new google.maps.MarkerImage("/assets/shared/neglect.png",
           new google.maps.Size(21, 34),
           new google.maps.Point(0,0),
           new google.maps.Point(10, 34));
@@ -82,7 +82,7 @@ $(document).ready(function() {
       name: 'add_ligth',
       action: function(e){
         var pinColor = "DCDCDC";
-        var pinImage = new google.maps.MarkerImage("/assets/light.png",
+        var pinImage = new google.maps.MarkerImage("/assets/shared/light.png",
           new google.maps.Size(21, 34),
           new google.maps.Point(0,0),
           new google.maps.Point(10, 34));
@@ -107,7 +107,7 @@ $(document).ready(function() {
       name: 'add_party',
       action: function(e){
         var pinColor = "FFFF00";
-        var pinImage = new google.maps.MarkerImage("/assets/libation.png",
+        var pinImage = new google.maps.MarkerImage("/assets/shared/libation.png",
           new google.maps.Size(21, 34),
           new google.maps.Point(0,0),
           new google.maps.Point(10, 34));
@@ -177,21 +177,11 @@ $(document).ready(function() {
 });
 
 function show_loading(){
-  $('#loading-container').show();
-  var bar = $('#loading-text .bar');
-  var timer_id;
-  bar.css('width', 5+'%');
-  timer_id = window.setInterval(function(){
-    var per = parseInt(bar[0].style.width);
-    bar.css('width', (per+10)+'%');
-    if(per >= 100){
-      clearInterval(timer_id)
-    }
-  }, 10);
+  (new MapLoader).lock()
 }
 
 function hide_loading(){
-  $('#loading-container').hide();
+  (new MapLoader).unlock()
 }
 
 function search() {
@@ -224,5 +214,5 @@ show_loading();
 
 $(window).load(function(){
   hide_loading();
-  $('#loading-text').show();
+  $('#loader-text').show();
 })

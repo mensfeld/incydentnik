@@ -84,13 +84,13 @@ if(window.google && window.google.maps){
       };
 
       var zoomControl = options.zoomControl || true,
-          zoomControlStyle = zoomControlOpt.style || 'DEFAULT',
-          zoomControlPosition = zoomControlOpt.position || 'TOP_LEFT',
-          panControl = options.panControl || true,
-          mapTypeControl = options.mapTypeControl || true,
-          scaleControl = options.scaleControl || true,
-          streetViewControl = options.streetViewControl || true,
-          overviewMapControl = overviewMapControl || true;
+      zoomControlStyle = zoomControlOpt.style || 'DEFAULT',
+      zoomControlPosition = zoomControlOpt.position || 'TOP_LEFT',
+      panControl = options.panControl || true,
+      mapTypeControl = options.mapTypeControl || true,
+      scaleControl = options.scaleControl || true,
+      streetViewControl = options.streetViewControl || true,
+      overviewMapControl = overviewMapControl || true;
 
       var map_options = {};
 
@@ -157,7 +157,7 @@ if(window.google && window.google.maps){
           if (options.hasOwnProperty(i)){
             var option = options[i];
             html += '<li><a id="' + control + '_' + i + '" href="#">' +
-              option.title + '</a></li>';
+            option.title + '</a></li>';
           }
         }
 
@@ -238,15 +238,15 @@ if(window.google && window.google.maps){
 
         doc.body.appendChild(ul);
 
-        var context_menu_element = getElementById('gmaps_context_menu');
+      //  var context_menu_element = getElementById('gmaps_context_menu');
 
-//        google.maps.event.addDomListener(context_menu_element, 'mouseout', function(ev) {
-//          if(!ev.relatedTarget || !this.contains(ev.relatedTarget)){
-//            window.setTimeout(function(){
-//              context_menu_element.style.display = 'none';
-//            }, 400);
-//          }
-//        }, false);
+      //        google.maps.event.addDomListener(context_menu_element, 'mouseout', function(ev) {
+      //          if(!ev.relatedTarget || !this.contains(ev.relatedTarget)){
+      //            window.setTimeout(function(){
+      //              context_menu_element.style.display = 'none';
+      //            }, 400);
+      //          }
+      //        }, false);
       };
 
       this.hideContextMenu = function() {
@@ -837,7 +837,7 @@ if(window.google && window.google.maps){
         var latLngBounds = new google.maps.LatLngBounds(
           new google.maps.LatLng(options.bounds[0][0], options.bounds[0][1]),
           new google.maps.LatLng(options.bounds[1][0], options.bounds[1][1])
-        );
+          );
 
         options.bounds = latLngBounds;
 
@@ -990,19 +990,19 @@ if(window.google && window.google.maps){
       var travelMode, unitSystem;
       this.getRoutes = function(options) {
         switch (options.travelMode) {
-        case 'bicycling':
-          travelMode = google.maps.TravelMode.BICYCLING;
-          break;
-        case 'transit':
-          travelMode = google.maps.TravelMode.TRANSIT;
-          break;
-        case 'driving':
-          travelMode = google.maps.TravelMode.DRIVING;
-          break;
-        // case 'walking':
-        default:
-          travelMode = google.maps.TravelMode.WALKING;
-          break;
+          case 'bicycling':
+            travelMode = google.maps.TravelMode.BICYCLING;
+            break;
+          case 'transit':
+            travelMode = google.maps.TravelMode.TRANSIT;
+            break;
+          case 'driving':
+            travelMode = google.maps.TravelMode.DRIVING;
+            break;
+          // case 'walking':
+          default:
+            travelMode = google.maps.TravelMode.WALKING;
+            break;
         }
 
         if (options.unitSystem === 'imperial') {
@@ -1084,7 +1084,7 @@ if(window.google && window.google.maps){
           };
 
           service.getElevationAlongPath(pathRequest, function(result, status){
-           if (callback && typeof(callback) === "function") {
+            if (callback && typeof(callback) === "function") {
               callback(result, status);
             }
           });
@@ -1145,7 +1145,7 @@ if(window.google && window.google.maps){
 
               //end callback
               if (e.length > 0 && options.end) {
-                 options.end(e[e.length - 1]);
+                options.end(e[e.length - 1]);
               }
             }
           });
@@ -1194,7 +1194,7 @@ if(window.google && window.google.maps){
 
               //end callback
               if (e.length > 0 && options.end) {
-                 options.end(e[e.length - 1]);
+                options.end(e[e.length - 1]);
               }
             }
           });
@@ -1241,64 +1241,69 @@ if(window.google && window.google.maps){
         var layer;
 
         switch(layerName) {
-          case 'weather': this.singleLayers.weather = layer = new google.maps.weather.WeatherLayer();
+          case 'weather':
+            this.singleLayers.weather = layer = new google.maps.weather.WeatherLayer();
             break;
-          case 'clouds': this.singleLayers.clouds = layer = new google.maps.weather.CloudLayer();
+          case 'clouds':
+            this.singleLayers.clouds = layer = new google.maps.weather.CloudLayer();
             break;
-          case 'traffic': this.singleLayers.traffic = layer = new google.maps.TrafficLayer();
+          case 'traffic':
+            this.singleLayers.traffic = layer = new google.maps.TrafficLayer();
             break;
-          case 'transit': this.singleLayers.transit = layer = new google.maps.TransitLayer();
+          case 'transit':
+            this.singleLayers.transit = layer = new google.maps.TransitLayer();
             break;
-          case 'bicycling': this.singleLayers.bicycling = layer = new google.maps.BicyclingLayer();
+          case 'bicycling':
+            this.singleLayers.bicycling = layer = new google.maps.BicyclingLayer();
             break;
           case 'panoramio':
-              this.singleLayers.panoramio = layer = new google.maps.panoramio.PanoramioLayer();
-              layer.setTag(options.filter);
-              delete options.filter;
+            this.singleLayers.panoramio = layer = new google.maps.panoramio.PanoramioLayer();
+            layer.setTag(options.filter);
+            delete options.filter;
 
-              //click event
-              if(options.click) {
-                google.maps.event.addListener(layer, 'click', function(event) {
-                  options.click(event);
-                  delete options.click;
-                });
-              }
+            //click event
+            if(options.click) {
+              google.maps.event.addListener(layer, 'click', function(event) {
+                options.click(event);
+                delete options.click;
+              });
+            }
             break;
-            case 'places':
-              this.singleLayers.places = layer = new google.maps.places.PlacesService(this.map);
+          case 'places':
+            this.singleLayers.places = layer = new google.maps.places.PlacesService(this.map);
 
-              //search and  nearbySearch callback, Both are the same
-              if(options.search || options.nearbySearch) {
-                var placeSearchRequest  = {
-                  bounds : options.bounds || null,
-                  keyword : options.keyword || null,
-                  location : options.location || null,
-                  name : options.name || null,
-                  radius : options.radius || null,
-                  rankBy : options.rankBy || null,
-                  types : options.types || null
-                };
+            //search and  nearbySearch callback, Both are the same
+            if(options.search || options.nearbySearch) {
+              var placeSearchRequest  = {
+                bounds : options.bounds || null,
+                keyword : options.keyword || null,
+                location : options.location || null,
+                name : options.name || null,
+                radius : options.radius || null,
+                rankBy : options.rankBy || null,
+                types : options.types || null
+              };
 
-                if(options.search) {
-                  layer.search(placeSearchRequest, options.search);
-                }
-
-                if(options.nearbySearch) {
-                  layer.nearbySearch(placeSearchRequest, options.nearbySearch);
-                }
+              if(options.search) {
+                layer.search(placeSearchRequest, options.search);
               }
 
-              //textSearch callback
-              if(options.textSearch) {
-                var textSearchRequest  = {
-                  bounds : options.bounds || null,
-                  location : options.location || null,
-                  query : options.query || null,
-                  radius : options.radius || null
-                };
-
-                layer.textSearch(textSearchRequest, options.textSearch);
+              if(options.nearbySearch) {
+                layer.nearbySearch(placeSearchRequest, options.nearbySearch);
               }
+            }
+
+            //textSearch callback
+            if(options.textSearch) {
+              var textSearchRequest  = {
+                bounds : options.bounds || null,
+                location : options.location || null,
+                query : options.query || null,
+                radius : options.radius || null
+              };
+
+              layer.textSearch(textSearchRequest, options.textSearch);
+            }
             break;
         }
 
@@ -1316,8 +1321,8 @@ if(window.google && window.google.maps){
 
       this.removeLayer = function(layer) {
         if(typeof(layer) == "string" && this.singleLayers[layer] !== undefined) {
-           this.singleLayers[layer].setMap(null);
-           delete this.singleLayers[layer];
+          this.singleLayers[layer].setMap(null);
+          delete this.singleLayers[layer];
         }
         else {
           for(var i = 0; i < this.layers.length; i++) {
@@ -1444,7 +1449,9 @@ if(window.google && window.google.maps){
 
       var streetview_events = ['closeclick', 'links_changed', 'pano_changed', 'position_changed', 'pov_changed', 'resize', 'visible_changed'];
 
-      var streetview_options = extend_object({visible : true}, options);
+      var streetview_options = extend_object({
+        visible : true
+      }, options);
 
       for(var i = 0; i < streetview_events.length; i++) {
         delete streetview_options[streetview_events[i]];
